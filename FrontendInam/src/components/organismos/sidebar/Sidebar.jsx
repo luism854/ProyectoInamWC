@@ -7,6 +7,7 @@ import {
 } from "../../../index";
 import {v} from "../../../styles/variables"
 import { NavLink } from "react-router-dom";
+
 export function Sidebar({ state, setState }) {
 
   return (
@@ -17,9 +18,9 @@ export function Sidebar({ state, setState }) {
       <Container $isopen={state.toString()} className={state ? "active" : ""}>
         <div className="Logocontent">
           <div className="imgcontent">
-            <img src={v.logo} />
+            <img src={v.inam} />
           </div>
-          <h2>MotaTomic</h2>
+          <h2>INAM</h2>
         </div>
         {LinksArray.map(({ icon, label, to }) => (
           <div
