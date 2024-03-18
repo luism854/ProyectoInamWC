@@ -1,0 +1,36 @@
+*{
+    margin: 5px;
+    padding: 0;
+}
+.conetnedor-prin{
+    display: flex;
+    flex-direction: column;
+}
+body{
+    background-color: rgb(196, 211, 211);
+}
+table{
+    border-collapse: collapse;
+    background-color: rgb(25, 199, 243);
+}
+td{
+    height: 28px;
+    border: 1px solid black;
+    padding: 3px 8px;
+}
+.cont-f{
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+.side2{
+    width: 310px;
+}
+.docu{
+    font-size: 2.2em;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

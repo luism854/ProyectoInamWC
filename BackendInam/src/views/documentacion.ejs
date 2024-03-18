@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="docu">Documentacion</h1>
+    <br>
+    <div class="conetnedor-prin">
+        <div class="cont-f">
+            <div>
+                <h3>Registrar usuario</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">1</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Registrar usuario</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/usuario/registrar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para registrar un usuario en la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">POST</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">(Administrador, Instructor, Celador)</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                        "nombre": luis muñoz,<br>
+                        "identificacion": 1007575933,<br>
+                        "telefono": "313371594",<br>
+                        "correo": "luis@gmail.com",<br>
+                        "contraseña": "12345",<br>
+                        "tipo_usuario": "administrador",<br>
+                        "estado_usuario": "activo",<br>
+                      }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                                "message": "Se registró con éxito el usuario"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                        "message: "Usuario no registrado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Listar Usuarios</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">2</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Listar usuarios</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/usuario/listar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar a los usuarios de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                        "result"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                        "message:"No se econtraron usuarios"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Actualizar usuario</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">3</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Actualizar usuario</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/usuario/actualizar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para actualizar un usuario de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">PUT</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">(Administrador, usuario, celador)</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "nombre": "luis",<br>
+                            "identificacion": 1007575935,<br>
+                            "telefono": "3132898323",<br>
+                            "correo": "luis@gmail.com",<br>
+                            "contraseña": "12345",<br>
+                            "tipo_usuario": "administrador",<br>
+                            "estado_usuario": "activo",<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Usuario actualizado con éxito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                        "message:"message": "Usuario no actualizado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Eliminar Usuario</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">4</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Eliminar usuario</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/usuario/eliminar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para eliminar un usuario en la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">DELETE</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Usuario eliminado con éxito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "Usuario no eliminado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Consultar usuario</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">5</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Consultar usuario</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/usuario/buscar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para consultar a un usuario de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                        "result"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "Usuario no encontrado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Registrar area</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">6</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Registrar area</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/area/registrar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para registrar un area en la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">POST</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "id_area": 1,<br>
+                            "nombre_area": "Agronomia",<br>
+                            "estado": activo,<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se registro con exito el area"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message:"No se registro el area"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Listar areas</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">7</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Listar areas</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/area/listar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar las areas de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,instructor,celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "Usuarios no encontrados"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Actualizar area</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">8</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Actualizar area</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/area/actualizar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para actualizar un area de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">PUT</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "nombre_area": "Tics",<br>
+                            "estado": "inaccesible",<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se actualizó el area con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "El area no se actualizó"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Eliminar area</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">9</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Eliminar area</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/area/eliminar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para eliminar un area de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">DELETE</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message:"Area eliminada con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message:"Area no eliminada"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Consultar area</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">10</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Consultar area</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/area/consultar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para consultar un area de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,instructor,celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            {}<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "Usuario no encontrado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Registrar ambiente</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">11</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Registrar ambiente</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/ambiente/registrar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para registrar un ambiente en la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">POST</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "nombre_ambiente": "y12",<br>
+                            "estado_ambiente": "ocupado",<br>
+                            "fk_area": 1,<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se registró el ambiente con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "No se registro el ambiente<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Listar ambientes</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">12</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Listar ambientes</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/ambiente/listar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar los ambientes de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Instructor,Celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (resultbr>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message:"No se encontraron ambientes"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Eliminar ambiente</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">13</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Eliminar ambiente</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/ambiente/eliminar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para eliminar un ambiente de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">DELETE</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "se elimino el ambiente con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se elimino el ambiente"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Actualizar ambiente</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">14</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Actualizar ambiente</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/ambiente/actualizar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para actualizar un ambiente de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">PUT</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "nombre_ambiente": "y12",<br>
+                            "estado_ambiente": "ocupado",<br>
+                            "fk_area": 1<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se actualizó el ambiente con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "No se actualizo el ambiente"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Consultar ambiente</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">15</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">COnsultar ambiente</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/ambiente/consultar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para consultar un ambiente de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Instructor,Celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se encontró el ambiente<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Registrar elemento</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">16</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Registrar elemento</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/elemento/registrar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para registrar un elemento en la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">POST</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "codigo_sena": 103654,<br>
+                            "estado": "funcional",<br>
+                            "nombre_elemento": "Computador"<br>
+                            "tipo_elemento": "tecnologia"<br>
+                            "fk_ambiente": 1<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                              "message": "Se registró con exito el elemento"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "El elemento no se registró"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Listar elementos</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">17</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Listar elementos</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/elemento/listar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar todos los elementos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se encontraron elementos"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Eliminar elemento</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">18</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Eliminar elemento</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/elemento/eliminar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para eliminar un elemento</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">DELETE</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se eliminó con exito el elemento"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "No se eliminó el elemento"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Actualizar elemento</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">19</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Actualizar elemento</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/elemento/actualizar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para actualizar un elemento de la base de datos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">PUT</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "codigo_sena": 323432,<br>
+                            "estado": "funcional",<br>
+                            "nombre_elemento": "computador",<br>
+                            "tipo_elemento": "tecnologia",<br>
+                            "nota_cambio": "cambio por falta de dispositivos",<br>
+                            "cambios": "si",<br>
+                            "fk_ambiente": 1<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se actualizó con exito el elemento"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se actualizó el elemento"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Consultar elemento</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">20</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Consultar elemento</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/elemento/consultar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar un elemento por codigo de sena</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor,Celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "Elemento no encontrado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Registrar prestamo</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">21</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Registrar prestamo</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/prestamo/registrar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para registrar un prestamo</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">POST</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor,Celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "nombre_ambiente": "y13",<br>
+                            "fecha_prestamo": "2024/03/25",<br>
+                            "fecha_entrega": "2024/03/25",<br>
+                            "nombre_celador": "alberto",<br>
+                            "observaciones": "ninguna",<br>
+                            "fk_usuario": 1,<br>
+                            "fk_ambiente": 1,<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Prestamo registrado con exito",<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se registro el prestamo"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Listar Prestamos</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">22</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Listar Prestamos</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/prestamo/listar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar todos los prestamos</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor,Celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                              (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "No se encontraron prestamos"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Eliminar prestamo</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">23</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Eliminar prestamo</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/prestamo/eliminar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para eliminar un prestamo</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">DELETE</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se eliminó el prestamo con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se eliminó el prestamo"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Actualizar prestamo</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">24</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Actualizar prestamo</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/prestamo/actualizar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para actualizar un prestamo</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">PUT</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "nombre_ambiente": "y12",<br>
+                            "fecha_prestamo": "2024-03-14",<br>
+                            "fecha_entrega": "2024-03-14",<br>
+                            "nombre_celador": "kayn",<br>
+                            "observaciones": "ninguna",<br>
+                            "fk_usuario": 1,<br>
+                            "fk_ambiente": 1<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Prestamo actualizado con exito",<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "Prestamo no actualizado"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Consultar prestamo</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">25</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Consultar prestamo</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/prestamo/consultar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para consultar un prestamo</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor,Celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                              (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se encontró el prestamo"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Registrar novedad</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">26</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Registrar novedad</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/novedad/registrar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para registrar una novedad</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">POST</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "tipo_novedad": "Daño en teclado",<br>
+                            "descripcion_novedad": "se rompio una tecla",<br>
+                            "responsable_registro": "tito",<br>
+                            "fecha_novedad": "2024-03-16",<br>
+                            "fk_id_prestamo": 1<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se registró la novedad con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "No se registró la novedad"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Listar novedades</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">27</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Listar novedades</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/novedad/listar</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para listar todas las novedades</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se encontraron novedades"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="cont-f">
+            <div>
+                <h3>Eliminar novedad</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">28</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Eliminar novedad</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/novedad/eliminar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para eliminar una novedad</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">DELETE</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se elimino con exito la novedad"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se eliminó la novedad"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Actualizar novedad</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">29</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Actualizar novedad</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/novedad/actualizar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para actualizar una novedad</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">PUT</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador,Intructor,celador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {<br>
+                            "tipo_novedad": "Daño en teclado actualizado",<br>
+                            "descripcion_novedad": "se rompio una tecla",<br>
+                            "responsable_registro": "tito",<br>
+                            "fecha_novedad": "2024-03-16",<br>
+                            "fk_id_prestamo": 1<br>
+                        }</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            "message": "Se actualizó la novedad con exito"<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "404"<br>
+                        Body :{<br>
+                            "message": "No se actualizó la novedad"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+            <div>
+                <h3>Consultar novedad</h3>
+                <table>
+                    <tr><td class="sly-t">Numero</td><td class="side2">30</td></tr>
+                    <tr><td class="sly-t">Nombre endpoint</td><td class="side2">Consultar novedad</td></tr>
+                    <tr><td class="sly-t">URL</td><td class="side2">localhost:3000/novedad/consultar/id</td></tr>
+                    <tr><td class="sly-t">Descripción</td><td class="side2">Endpoint para consultar una novedad</td></tr>
+                    <tr><td class="sly-t">Verbo HTTP</td><td class="side2">GET</td></tr>
+                    <tr><td class="sly-t">Header</td><td class="side2">Content-type: JSON</td></tr>
+                    <tr><td class="sly-t">Usuarios</td><td class="side2">Administrador</td></tr>
+                    <tr><td class="sly-t">Request JSON</td><td>
+                        {}</td></tr>
+                    <tr><td class="sly-t">Response</td><td>
+                        <div class="rect">Correcto:</div>
+                        "status": "200"<br>
+                        Body :{<br>
+                            (result)<br>
+                        }
+                        <div class="rect">Incorrecto</div>
+                        "status": "403"<br>
+                        Body :{<br>
+                            "message": "No se encontraron novedades"<br>
+                        }
+                    </td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
