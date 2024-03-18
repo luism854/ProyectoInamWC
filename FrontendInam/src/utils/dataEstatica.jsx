@@ -26,29 +26,34 @@ export const DesplegableUser = [
 //data SIDEBAR
 export const LinksArray = [
   {
-    label: "Administrador",
+    label: "Usuarios",
     icon: <v.iconoUser />,
     to: "/admin",
   },
   {
-    label: "Casa",
+    label: "Areas",
     icon: <AiOutlineHome />,
     to: "/",
   },
   {
-    label: "Bodega",
+    label: "Ambientes",
     icon: <v.iconocategorias />,
     to: "/kardex",
   },
   {
-    label: "ReportGG",
-    icon: <v.iconoreportes />,
+    label: "Elementos",
+    icon: <v.iconostock />,
     to: "/reportes",
   },
   {
-    label: "Motatomic",
-    icon: <v.iconoreact />,
+    label: "Prestamos",
+    icon: <v.iconocorona />,
     to: "/motatomic",
+  },
+  {
+    label: "Novedades",
+    icon: <v.iconoreportes />,
+    to: "/luis",
   },
  
 ];

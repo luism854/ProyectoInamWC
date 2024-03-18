@@ -13,6 +13,7 @@ import { FaReact } from "react-icons/fa";
 import { BsArrowDown, BsArrowUpShort } from "react-icons/bs";
 import { FaBalanceScale } from "react-icons/fa";
 import logo from "../assets/inventarioslogo.png";
+import inam from "../assets/inamNuevo.png";
 import { BsGoogle } from "react-icons/bs";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";
@@ -93,6 +94,7 @@ export const v = {
   flechaarribalarga: BsArrowUpShort,
   balance: FaBalanceScale,
   logo: logo,
+  inam: inam,
   iconogoogle: BsGoogle,
   iconocerrar: RiCloseLine,
   iconoguardar: BiSave,
